@@ -1,0 +1,32 @@
+﻿@model List<SAMS.Models.AttendanceReport>
+
+<div>
+    <h4>Student Attendance Report</h4>
+    <hr />
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Roll Number</th>
+                <th>Present Days</th>
+                <th>Late Days</th>
+                <th>Absent Days</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (var i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => model[i].StudentName)</td>
+                    <td>@Html.DisplayFor(model => model[i].RollNumber)</td>
+                    <td>@Html.DisplayFor(model => model[i].PresentDays)</td>
+                    <td>@Html.DisplayFor(model => model[i].LateDays)</td>
+                    <td>@Html.DisplayFor(model => model[i].AbsentDays)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

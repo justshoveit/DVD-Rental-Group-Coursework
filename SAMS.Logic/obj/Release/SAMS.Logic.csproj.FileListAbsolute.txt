@@ -1,0 +1,11 @@
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Logic\bin\Release\SAMS.Logic.dll
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Logic\bin\Release\SAMS.Logic.pdb
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Logic\bin\Release\SAMS.Models.dll
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Logic\bin\Release\SAMS.Repository.dll
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Logic\bin\Release\SAMS.Models.pdb
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Logic\bin\Release\SAMS.Repository.pdb
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Logic\obj\Release\SAMS.Logic.csprojAssemblyReference.cache
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Logic\obj\Release\SAMS.Logic.csproj.CoreCompileInputs.cache
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Logic\obj\Release\SAMS.Logic.csproj.CopyComplete
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Logic\obj\Release\SAMS.Logic.dll
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Logic\obj\Release\SAMS.Logic.pdb

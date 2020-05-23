@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title - SAMS</title>
+    @*<link href="~/Content/font-awesome/css/font-awesome.css" rel="stylesheet" />*@
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/cssjqryUi")
+    @Scripts.Render("~/bundles/modernizr")
+    @*<link href="~/Scripts/node_modules/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />*@
+
+
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+
+
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="../../index2.html" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>SA</b>MS</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg">SAMS</span>
+            </a>
+            
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+
+                <a style="float:right" href="@Url.Action("Logoff", "Account", null)" class="btn btn-success btn-sm" title="Logoff">
+
+                    <span type="button" class="btn btn-outline-warning">Logout</span>
+
+
+                </a>
+            </nav>
+           
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="/Images/avatar5.png" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p>Admin</p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    </div>
+                </div>
+          
+                <ul class="sidebar-menu" data-widget="tree">
+                   
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-edit"></i>
+                            <span>Records</span>
+                            
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Student/Index"><i class="fa fa-wpforms"></i> Student</a></li>
+                            <li><a href="/Teacher/Index"><i class="fa fa-wpforms"></i> Teacher</a></li>
+                            <li><a href="/Module/Index"><i class="fa fa-wpforms"></i> Module</a></li>
+                            <li><a href="/Course/Index"><i class="fa fa-wpforms"></i> Course</a></li>
+                            <li><a href="/StudentModuleMapping/Index"><i class="fa fa-wpforms"></i> Student Module Mapping</a></li>
+                        </ul>
+
+                        <a href="#">
+                            <i class="fa fa-user-plus"></i>
+                            <span>Roles</span>
+                            
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Role/Index"><i class="fa fa-wpforms"></i> Role</a></li>
+                            <li><a href="/User/Index"><i class="fa fa-wpforms"></i> User</a></li>
+                        </ul>
+
+
+                        <a href="#">
+                            <i class="fa fa-clock-o" ></i>
+                            <span>Attendance</span>
+                           
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Timetable/Index"><i class="fa fa-wpforms"></i> Timetable</a></li>
+                            <li><a href="/Attendance/Index"><i class="fa fa-wpforms"></i> Attendance</a></li>
+                        </ul>
+
+                        <a href="#">
+                            <i class="fa fa-files-o"></i>
+                            <span>Reports</span>
+                           
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/StudentReport/Index"><i class="fa fa-wpforms"></i> Student Report</a></li>
+                            <li><a href="/TeacherReport/Index"><i class="fa fa-wpforms"></i> Teacher Report</a></li>
+                            <li><a href="/AttendanceReport/Index"><i class="fa fa-wpforms"></i> Attendance Report</a></li>
+                        </ul>
+
+                    </li>
+                    
+                </ul>
+            </section>
+           
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+
+            <!-- Main content -->
+            <section class="content">
+               
+                @RenderBody()
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            @*<div class="pull-right hidden-xs">
+                <b>Version</b> 2.4.0
+            </div>*@
+            <strong>Copyright &copy; 2019| SAMS | Student Attendance Management System.</strong> 
+        </footer>
+
+ 
+    </div>
+    <!-- ./wrapper -->
+      
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*<script src="~/Scripts/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

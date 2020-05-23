@@ -1,0 +1,49 @@
+﻿@model IEnumerable<SAMS.ViewModels.AttendanceDetailViewModel>
+
+<table class="table table-striped">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.MastId)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.MastId)
+        </td>*@
+        <td>
+            @Html.HiddenFor(modelItem => item.StudentId)
+            @Html.DisplayFor(modelItem => item.StudentName)
+        </td>
+        <td>
+            <div class="form-check">
+                @Html.RadioButtonFor(modelItem => item.Status, "P", new { @class = "form-check-input"}) Present @*@:Presetnt*@
+                @Html.RadioButtonFor(modelItem => item.Status, "L", new { @class = "form-check-input"}) Late@*@:Late*@
+                @Html.RadioButtonFor(modelItem => item.Status, "A", new { @class = "form-check-input"}) Absent @*@:Absent*@
+            </div>
+            @*@Html.DisplayFor(modelItem => item.Status)*@
+        </td>
+        <td>
+            @Html.TextBoxFor(modelItem => item.Remarks, new { @class = "form-control col-md-4" })
+            @*@Html.DisplayFor(modelItem => item.Remarks)*@
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>*@
+    </tr>
+}
+
+</table>

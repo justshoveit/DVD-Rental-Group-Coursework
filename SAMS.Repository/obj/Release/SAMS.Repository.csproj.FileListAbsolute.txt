@@ -1,0 +1,9 @@
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Repository\bin\Release\SAMS.Repository.dll
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Repository\bin\Release\SAMS.Repository.pdb
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Repository\bin\Release\SAMS.Models.dll
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Repository\bin\Release\SAMS.Models.pdb
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Repository\obj\Release\SAMS.Repository.csprojAssemblyReference.cache
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Repository\obj\Release\SAMS.Repository.csproj.CoreCompileInputs.cache
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Repository\obj\Release\SAMS.Repository.csproj.CopyComplete
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Repository\obj\Release\SAMS.Repository.dll
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Repository\obj\Release\SAMS.Repository.pdb

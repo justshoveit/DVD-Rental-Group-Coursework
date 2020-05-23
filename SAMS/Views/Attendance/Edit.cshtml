@@ -1,0 +1,85 @@
+﻿@model SAMS.Models.AttendanceMaster
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>AttendanceMaster</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.AttendanceDate)
+            </dt>
+            <dd>
+                @Html.TextBoxFor(model => model.AttendanceDate, new { @class = "form-control col-md-6" })
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CourseName)
+            </dt>
+            <dd>
+                @Html.TextBoxFor(model => model.CourseName, new { @class = "form-control col-md-6" })
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.SemesterName)
+            </dt>
+            <dd>
+                @Html.TextBoxFor(model => model.SemesterName, new { @class = "form-control col-md-6" })
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ModuleName)
+            </dt>
+            <dd>
+                @Html.TextBoxFor(model => model.ModuleName, new { @class = "form-control col-md-6" })
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ClassInformation)
+            </dt>
+            <dd>
+                @Html.TextBoxFor(model => model.ClassInformation, new { @class = "form-control col-md-6" })
+            </dd>
+        </dl>
+        <table>
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.details[0].StudentName)</th>
+                    <th>@Html.DisplayNameFor(model => model.details[0].Status)</th>
+                    <th>@Html.DisplayNameFor(model => model.details[0].Remarks)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < Model.details.Count; i++)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(model => model.details[i].StudentName)</td>
+                        <td>@Html.TextBoxFor(model => model.details[i].Status, new { @class = "form-control col-md-6" })</td>
+                        <td>@Html.TextBoxFor(model => model.details[i].Remarks, new { @class = "form-control col-md-6" })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

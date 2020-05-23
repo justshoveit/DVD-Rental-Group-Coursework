@@ -1,0 +1,4 @@
+C:\Users\admin\Downloads\SAMS-task-3\SAMS-task-3\SAMS.Models\bin\Debug\SAMS.Models.dll
+C:\Users\admin\Downloads\SAMS-task-3\SAMS-task-3\SAMS.Models\bin\Debug\SAMS.Models.pdb
+C:\Users\admin\Downloads\SAMS-task-3\SAMS-task-3\SAMS.Models\obj\Debug\SAMS.Models.dll
+C:\Users\admin\Downloads\SAMS-task-3\SAMS-task-3\SAMS.Models\obj\Debug\SAMS.Models.pdb

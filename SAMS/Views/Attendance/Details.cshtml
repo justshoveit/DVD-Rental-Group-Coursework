@@ -1,0 +1,74 @@
+﻿@model SAMS.Models.AttendanceMaster
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Attendance</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AttendanceDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AttendanceDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SemesterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SemesterName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ModuleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModuleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassInformation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassInformation)
+        </dd>
+
+    </dl>
+    <table>
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.details[0].StudentName)</th>
+                <th>@Html.DisplayNameFor(model => model.details[0].Status)</th>
+                <th>@Html.DisplayNameFor(model => model.details[0].Remarks)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (var i = 0; i < Model.details.Count; i++)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => model.details[i].StudentName)</td>
+                    <td>@Html.DisplayFor(model => model.details[i].Status)</td>
+                    <td>@Html.DisplayFor(model => model.details[i].Remarks)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

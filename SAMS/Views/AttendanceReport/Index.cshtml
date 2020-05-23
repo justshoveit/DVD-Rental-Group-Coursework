@@ -1,0 +1,100 @@
+﻿@model SAMS.Models.StudentReport
+
+
+@using (Html.BeginForm("Details", "AttendanceReport"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Student Attendance Report</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ModuleId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.DropDownListFor(model => model.ModuleId, (IEnumerable<SelectListItem>)ViewBag.ModuleDDL, new { @class = "form-control" , @id="modules"})
+                    @Html.ValidationMessageFor(model => model.ModuleId)
+                </div>
+                @Html.LabelFor(model => model.StudentId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.DropDownListFor(model => model.StudentId, (IEnumerable<SelectListItem>)ViewBag.TypeList, new { @class = "form-control" , @id="students"})
+                    @Html.ValidationMessageFor(model => model.FromDate)
+                </div>
+                @*@Html.LabelFor(model => model.ReportType, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.DropDownListFor(model => model.ReportType, (IEnumerable<SelectListItem>)ViewBag.TypeList, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.FromDate)
+                </div>*@
+            </div>
+            <div class="form-group col-md-12">
+                @Html.LabelFor(model => model.FromDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model=>model.FromDate, new { @class = "form-control", @readonly = "readonly" })
+                    @Html.ValidationMessageFor(model => model.FromDate)
+                </div>
+
+                @Html.LabelFor(model => model.ToDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(model => model.ToDate, new { @class = "form-control", @readonly = "readonly" })
+                    @Html.ValidationMessageFor(model => model.ToDate)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Show Report" class="btn btn-default" />
+                </div>
+            </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+<script>
+    $(document).ready(function () {
+
+        $('#FromDate').datepicker({
+            dateFormat: "yy/mm/dd",
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-60:+0"
+        });
+        $('#ToDate').datepicker({
+            dateFormat: "yy/mm/dd",
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-60:+0"
+
+        });
+        $("#modules").change(function () {
+            var module = $("#modules").val();
+            var _classes = $("#students");
+            _classes.empty();
+            $.ajax({
+                method: "GET",
+                url: '@Url.Action("GetStudentList")',
+                data: {
+                    moduleId: module
+                },
+                success: function (data) {
+                    if (data) {
+                        _classes.append($('<option/>', { value: "-1", text: "All Students" }))
+                        $.each(data, function (index, item) {
+                            _classes.append($('<option/>', { value: item.Value, text: item.Text }))
+                        });
+                    }
+                }
+            })
+        });
+
+       
+        })
+</script>
+
+}

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<SAMS.Models.StudentModuleMapping>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Student Module Mapping Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ModuleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModuleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentName)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit", "StudentModuleMapping", new { id = item.Id })" class="btn btn-info btn-sm" title="Edit">
+
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+            </a>
+            <a href="@Url.Action("Delete", "StudentModuleMapping", new { id = item.Id })" class="btn btn-danger btn-sm" title="Delete">
+
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+            </a>
+
+            <a href="@Url.Action("Details", "StudentModuleMapping", new { id = item.Id })" class="btn btn-success btn-sm" title="Details">
+
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+            </a>
+        </td>
+    </tr>
+}
+
+</table>

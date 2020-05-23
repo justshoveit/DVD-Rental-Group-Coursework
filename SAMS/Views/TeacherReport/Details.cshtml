@@ -1,0 +1,32 @@
+﻿@model List<SAMS.Models.TeacherReport>
+
+<div>
+    <h4>All Teacher Reports</h4>
+    <hr />
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Teacher Name</th>
+                <th>Teacher Type</th>
+                <th>Module Name</th>
+                <th>Course Name</th>
+                <th>Classes Per Week</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (var i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => model[i].TeacherName)</td>
+                    <td>@Html.DisplayFor(model => model[i].TeacherType)</td>
+                    <td>@Html.DisplayFor(model => model[i].ModuleName)</td>
+                    <td>@Html.DisplayFor(model => model[i].CourseName)</td>
+                    <td>@Html.DisplayFor(model => model[i].ClassesPerWeek)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

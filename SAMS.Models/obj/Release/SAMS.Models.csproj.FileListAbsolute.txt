@@ -1,0 +1,6 @@
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Models\bin\Release\SAMS.Models.dll
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Models\bin\Release\SAMS.Models.pdb
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Models\obj\Release\SAMS.Models.csprojAssemblyReference.cache
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Models\obj\Release\SAMS.Models.csproj.CoreCompileInputs.cache
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Models\obj\Release\SAMS.Models.dll
+C:\Users\me_ja\Desktop\final\SAMS-task-3\SAMS.Models\obj\Release\SAMS.Models.pdb

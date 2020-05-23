@@ -1,0 +1,109 @@
+﻿@model SAMS.Models.Student
+
+@{
+    
+}
+
+<h3 style="margin-top:0px">Student Edit</h3>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+       
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group col-md-12">
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Name, new { @class = "control-label " })
+            </div>
+
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control col-md-4" })
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.RollNumber, new { @class = "control-label " })
+            </div>
+
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.RollNumber, new { @class = "form-control col-md-4" })
+                @Html.ValidationMessageFor(model => model.RollNumber)
+            </div>
+
+
+        </div>
+
+        <div class="form-group col-md-12">
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Email, new { @class = "control-label " })
+            </div>
+
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control col-md-4" })
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.AcademicYear, new { @class = "control-label " })
+            </div>
+
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.AcademicYear, new { @class = "form-control col-md-4" })
+                @Html.ValidationMessageFor(model => model.AcademicYear)
+            </div>
+        </div>
+        <div class=" form-group col-md-12">
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.EnrollDate, new { @class = "control-label " })
+            </div>
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.EnrollDate, new { @class = "form-control col-md-4", placeholder = "Student Enrollment Date", @readonly = "true" })
+                @Html.ValidationMessageFor(model => model.EnrollDate)
+            </div>
+        </div>
+
+
+       
+
+        <div class="form-group col-md-12">
+            <div class=" col-md-offset-2 col-md-2">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+            <div id="divMessage" style="line-height:5px" class=" col-md-8">
+                @ViewBag.Message
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script>
+    $(document).ready(function () {
+
+
+        //For Date
+        $('#EnrollDate').datepicker({
+            dateFormat: "yy/mm/dd",
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-60:+0"
+        });
+            var message = '@ViewBag.Message';
+            if (!(message == null || message == '' || message == undefined)) {
+                $("#divMessage").addClass('alert alert-danger');
+                $(".alert").fadeOut(3000);
+            }
+
+        });
+</script>
+}

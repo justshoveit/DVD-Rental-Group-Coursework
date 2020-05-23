@@ -1,0 +1,87 @@
+﻿@model IEnumerable<SAMS.Models.Timetable>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2> Timetable Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-responsive table-hover table-bordered table-condensed">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SemesterName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcademicYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Day)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModuleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SemesterName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcademicYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModuleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeacherName)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", "Timetable", new { id = item.Id })" class="btn btn-info btn-sm" title="Edit">
+
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                </a>
+                <a href="@Url.Action("Delete", "Timetable", new { id = item.Id })" class="btn btn-danger btn-sm" title="Delete">
+
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </a>
+
+                <a href="@Url.Action("Details", "Timetable", new { id = item.Id })" class="btn btn-success btn-sm" title="Details">
+
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </a>
+
+            </td>
+        </tr>
+    }
+
+</table>

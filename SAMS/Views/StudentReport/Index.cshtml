@@ -1,0 +1,37 @@
+﻿@model SAMS.Models.StudentReport
+
+
+@using (Html.BeginForm("Details", "StudentReport"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Student Module Report</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CourseId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-5">
+                    @Html.DropDownListFor(model => model.CourseId, (IEnumerable<SelectListItem>)ViewBag.CourseDDL, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SemesterName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Show Report" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
